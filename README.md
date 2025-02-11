@@ -54,6 +54,23 @@ The **Extracurricular Management System** is a web-based application developed u
 - Mobile app support.
 - AI-based performance analytics.
 
+---
+
+## ⚙️ Procedures & Triggers in MySQL
+| Procedure / Trigger         | Function |
+|-----------------------------|-------------------------------------------------------------|
+| **AddStudentToEskul**       | Menambahkan siswa ke ekstrakurikuler hanya jika belum terdaftar. |
+| **CalculateAttendancePoints** | Menghitung persentase kehadiran & poin eskul berdasarkan jumlah pertemuan. |
+| **CalculateAverageGrade**    | Menghitung nilai rata-rata dari semua siswa dalam satu eskul. |
+| **MarkStudentExited**       | Mengupdate status siswa menjadi "Exited" saat keluar dari eskul. |
+| **AddAttendance**           | Menambahkan absensi hanya jika belum ada di hari yang sama. |
+| **trg_update_attendance_date** | Mengupdate tanggal otomatis saat status absensi berubah. |
+| **trg_user_activity**       | Menyimpan aktivitas user dalam log setiap kali ada perubahan. |
+| **trg_delete_student**      | Menghapus semua data siswa terkait saat akun dihapus. |
+| **trg_delete_teacher**      | Menghapus data guru dari eskul saat akun dihapus. |
+
+---
+
 ## License
 This project is licensed under the **MIT License**. Feel free to modify and distribute it.
 
