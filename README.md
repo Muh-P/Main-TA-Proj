@@ -30,7 +30,7 @@ The **Extracurricular Management System** is a web-based application developed u
 ### Steps:
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repository/extracurricular-management.git
+   [git clone https://github.com/your-repository/extracurricular-management.git](https://github.com/Muh-P/Main-TA-Proj.git)
    ```
 2. Move the project folder to your web server directory (e.g., `htdocs` for XAMPP).
 3. Create a MySQL database and import the provided SQL file (`database.sql`).
