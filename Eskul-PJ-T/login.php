@@ -9,12 +9,12 @@ $database = "db_eskul_test";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
-// Check connection
+// Cek connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Handle login form submission
+// MengCheck Login
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($username) || empty($password)) {
         $error = "⚠️ Maaf, kolom username dan password tidak bisa kosong";
     } else {
-        // Query untuk mendapatkan data user
+        // Query Data User
         $query = "SELECT * FROM users WHERE username = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("s", $username);
@@ -32,12 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
 
-            // Cek apakah password masih dalam bentuk teks atau sudah di-hash
+            // Cek Pass Dalam TEXT/HASH
             if (password_verify($password, $user['password'])) {
                 $validPassword = true;
-            } elseif ($password === $user['password']) { // Jika masih dalam bentuk teks
+            } elseif ($password === $user['password']) { // TEXT
                 $validPassword = true;
-                $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+                $hashed_password = password_hash($password, PASSWORD_BCRYPT); //BCRYPT
 
                 // Update password di database agar menjadi hashed
                 $update_query = "UPDATE users SET password = ? WHERE username = ?";

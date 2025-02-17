@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $new_full_name = $_POST['full_name'];
     $new_role = $_POST['role'];
 
-    // Update user details in database
+    // Update User Details
     $query = "UPDATE users SET username='$new_username', full_name='$new_full_name', role='$new_role' WHERE id=$id";
     if ($conn->query($query) === TRUE) {
         echo "User updated successfully";

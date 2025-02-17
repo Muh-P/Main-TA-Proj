@@ -102,7 +102,7 @@ if ($conn->connect_error) {
         </table>
     </div>
     
-    <!-- Logout Confirmation Modal -->
+
     <div class="logout-overlay" id="logoutOverlay">
         <div class="logout-modal">
             <h3>Apakah Anda yakin ingin logout?</h3>

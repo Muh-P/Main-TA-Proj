@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2025 at 09:02 AM
+-- Generation Time: Feb 17, 2025 at 09:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -89,6 +89,13 @@ CREATE TABLE `attendance` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `attendance`
+--
+
+INSERT INTO `attendance` (`attendance_id`, `eskul_id`, `student_id`, `date`, `status`) VALUES
+(4, 3, 5, '2025-02-17', 'Present');
+
+--
 -- Triggers `attendance`
 --
 DELIMITER $$
@@ -149,7 +156,7 @@ CREATE TABLE `eskul_announcements` (
 CREATE TABLE `eskul_schedule` (
   `schedule_id` int(11) NOT NULL,
   `eskul_id` int(11) NOT NULL,
-  `day_of_week` enum('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') NOT NULL,
+  `day_of_week` enum('Senin','Selasa','Rabu','Kamis','Jumat','Sabtu') NOT NULL,
   `start_time` time NOT NULL,
   `end_time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -329,7 +336,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `full_name`, `role`) VALUES
 (27, 'student_budi', '123', 'Budi Santoso', 'student'),
 (28, 'student_citra', '123', 'Citra Lestari', 'student'),
 (29, 'student_dian', '$2y$10$8V1hKfUdWb7Z5/NH9ZGoOeW45MoBzGhuu06IfYhJrrUkjwIpZH6A.', 'Dian Permana', 'student'),
-(30, 'teacher_music', '$2y$10$wTjp6IjX65WzG/07cD1xveDto3MvIJlcoFheLYpkFfsI4wt6zrWXS', 'Bu Syintia', 'teacher');
+(30, 'teacher_music', '$2y$10$9.6SheDM0Khpj1gxUnNDT.NfImJVqmMgKETLog1Z7goR1YGBXnqoq', 'Bu Syintia', 'teacher');
 
 -- --------------------------------------------------------
 
@@ -450,7 +457,7 @@ ALTER TABLE `user_activity_log`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `eskul`

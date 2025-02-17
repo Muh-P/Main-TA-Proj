@@ -6,12 +6,12 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSI
     exit;
 }
 
-// Prevent caching
+// Penghilang Cache
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
-// Regenerate session ID
+//REG ID
 session_regenerate_id(true);
 
 // Database connection
@@ -25,7 +25,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Pastikan user_id ada di session
+// Memastikan User Ada Di Session
 if (!isset($_SESSION['user_id'])) {
     die("Error: Session user_id tidak ditemukan. Silakan login kembali.");
 }
