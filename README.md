@@ -36,37 +36,47 @@ The **Extracurricular Management System** is a web-based application developed u
 ---
 
 # Folders Arrangement
-eskul-pj-t/  
-│── index.php  (Halaman utama)  
-│── config.php  (Koneksi database)  
-│── dashboard_admin.php  (Dashboard Admin)  
-│── dashboard_guru.php  (Dashboard Guru)  
-│── dashboard_siswa.php  (Dashboard Siswa)  
-│── register_eskul.php  (Fitur pendaftaran ekstrakurikuler)  
-│── logout.php  (Logout pengguna)  
-│  
-├── asset1/  
-│   ├── style.css  (CSS utama)  
-│   ├── main.js  (JavaScript utama)  
-│   ├── images/  (Folder untuk gambar)  
-│  
-├── crud-admin/  
-│   ├── add_user.php  (Tambah pengguna)  
-│   ├── edit_user.php  (Edit pengguna)  
-│   ├── delete_user.php  (Hapus pengguna)  
-│  
-├── crud-eskul/  
-│   ├── add_eskul.php  (Tambah ekstrakurikuler)  
-│   ├── edit_eskul.php  (Edit ekstrakurikuler)  
-│   ├── delete_eskul.php  (Hapus ekstrakurikuler)  
-│  
-├── absensi/  
-│   ├── absensi_eskul.php  (Kelola absensi ekstrakurikuler)  
-│   ├── laporan_absensi.php  (Laporan absensi)  
-│  
-└── penilaian/  
-    ├── penilaian_eskul.php  (Kelola penilaian siswa)  
-    ├── laporan_penilaian.php  (Laporan penilaian siswa)  
+Eskul-PJ-T/
+│── index.php                  # Halaman utama
+│── config.php                  # Koneksi database
+│── dashboard_admin.php         # Dashboard Admin
+│── dashboard_guru.php          # Dashboard Guru
+│── dashboard_siswa.php         # Dashboard Siswa
+│── register_eskul.php          # Pendaftaran ekstrakurikuler
+│── logout.php                  # Logout pengguna
+│
+├── asset1/                     # Folder untuk aset web
+│   ├── style.css               # CSS utama
+│   ├── main.js                 # JavaScript utama
+│   ├── images/                 # Folder untuk gambar
+│
+├── profil/                     # Fitur Profil Pengguna
+│   ├── profil_admin.php        # Profil Admin
+│   ├── profil_guru.php         # Profil Guru
+│   ├── profil_siswa.php        # Profil Siswa
+│   ├── edit_profil.php         # Edit Profil (nama, email, foto, password)
+│
+├── crud-admin/                 # CRUD Pengguna (Admin)
+│   ├── add_user.php            # Tambah Pengguna
+│   ├── edit_user.php           # Edit Pengguna
+│   ├── delete_user.php         # Hapus Pengguna
+│
+├── crud-eskul/                 # CRUD Ekstrakurikuler
+│   ├── add_eskul.php           # Tambah Eskul
+│   ├── edit_eskul.php          # Edit Eskul
+│   ├── delete_eskul.php        # Hapus Eskul
+│
+├── absensi/                     # Manajemen Absensi
+│   ├── absensi_eskul.php       # Kelola Absensi
+│   ├── laporan_absensi.php     # Laporan Absensi
+│
+├── penilaian/                   # Manajemen Penilaian Siswa
+│   ├── penilaian_eskul.php     # Kelola Penilaian
+│   ├── laporan_penilaian.php   # Laporan Penilaian
+│
+└── database/                    # Database & Backup
+    ├── db_eskul_test.sql        # Database MySQL
+    ├── backup/                  # Backup Data
 
 ---
 
