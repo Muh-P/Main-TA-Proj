@@ -33,6 +33,44 @@ The **Extracurricular Management System** is a web-based application developed u
 ---
 
 
+---
+
+# Folders Arrangement
+eskul-pj-t/  
+│── index.php  (Halaman utama)  
+│── config.php  (Koneksi database)  
+│── dashboard_admin.php  (Dashboard Admin)  
+│── dashboard_guru.php  (Dashboard Guru)  
+│── dashboard_siswa.php  (Dashboard Siswa)  
+│── register_eskul.php  (Fitur pendaftaran ekstrakurikuler)  
+│── logout.php  (Logout pengguna)  
+│  
+├── asset1/  
+│   ├── style.css  (CSS utama)  
+│   ├── main.js  (JavaScript utama)  
+│   ├── images/  (Folder untuk gambar)  
+│  
+├── crud-admin/  
+│   ├── add_user.php  (Tambah pengguna)  
+│   ├── edit_user.php  (Edit pengguna)  
+│   ├── delete_user.php  (Hapus pengguna)  
+│  
+├── crud-eskul/  
+│   ├── add_eskul.php  (Tambah ekstrakurikuler)  
+│   ├── edit_eskul.php  (Edit ekstrakurikuler)  
+│   ├── delete_eskul.php  (Hapus ekstrakurikuler)  
+│  
+├── absensi/  
+│   ├── absensi_eskul.php  (Kelola absensi ekstrakurikuler)  
+│   ├── laporan_absensi.php  (Laporan absensi)  
+│  
+└── penilaian/  
+    ├── penilaian_eskul.php  (Kelola penilaian siswa)  
+    ├── laporan_penilaian.php  (Laporan penilaian siswa)  
+
+---
+
+
 ## Technology Stack
 - **Backend:** PHP
 - **Database:** MySQL
