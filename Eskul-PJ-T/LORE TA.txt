@@ -1,0 +1,7 @@
+Pembimbing bisa mengajar beberapa eskul atau lebih tapi 1 eskul hanya bisa diajari oleh 1 pembimbing
+
+Masuk ke dalam dashboard guru set by
+
+Name guru get by eskulnya jadi keluar semua eskul yang di ajari
+
+penjelasan ada di KERTAS LEGENDA

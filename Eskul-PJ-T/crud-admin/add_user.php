@@ -7,15 +7,8 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['role'] != 'admin') {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Database connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "db_eskul_test";
+    include '../koneksi.php';
 
-    $conn = new mysqli($servername, $username, $password, $database);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Secure password hashing

@@ -5,15 +5,8 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['role'] != 'admin') {
     exit;
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "db_eskul_test";
+include '../koneksi.php';
 
-$conn = new mysqli($servername, $username, $password, $database);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 $id = $_GET['id'];
 

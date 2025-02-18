@@ -13,18 +13,7 @@ header("Pragma: no-cache");
 
 session_regenerate_id(true);
 
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "db_eskul_test";
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'koneksi.php';
 ?>
 
 <!DOCTYPE html>
