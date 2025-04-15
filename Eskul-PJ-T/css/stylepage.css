@@ -1,0 +1,48 @@
+/* Pagination Container */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 3px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: var(--hover-color);
+}
+
+/* Active Page Styling */
+.pagination a.active {
+    background-color: var(--hover-color);
+    font-weight: bold;
+}
+
+/* Previous / Next Buttons */
+.pagination .prev, .pagination .next {
+    padding: 8px 12px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.pagination .prev:hover, .pagination .next:hover {
+    background-color: var(--hover-color);
+}
+
+.pagination .prev {
+    margin-right: 10px;
+}
+
+.pagination .next {
+    margin-left: 10px;
+}

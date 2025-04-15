@@ -43,7 +43,7 @@ $eskul_result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Siswa</title>
-    <link rel="stylesheet" href="asset1/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="navbar">
@@ -83,16 +83,6 @@ $eskul_result = $stmt->get_result();
         </div>
     </div>
 
-    <script src="asset1/main.js"></script>
-    <script>
-        function confirmLogout(event) {
-            event.preventDefault();
-            document.getElementById("logoutOverlay").classList.add("show");
-        }
-        
-        function closeLogoutModal() {
-            document.getElementById("logoutOverlay").classList.remove("show");
-        }
-    </script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

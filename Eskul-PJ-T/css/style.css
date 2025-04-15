@@ -1,0 +1,330 @@
+/* 🎨 Global Variables */
+:root {
+    --bg-color: #EFDCAB;
+    --bg-color-2: #FFF5E1;
+    --text-color: #333;
+    --primary-color: #FFB433;
+    --hover-color: #E09E2C;
+    --sidebar-bg: #FFB433;
+    --sidebar-text: #5A3E1B;
+    --overlay-bg: rgba(0, 0, 0, 0.5);
+    --gradient-bg: linear-gradient(135deg, #EFDCAB, #FFB433);
+    --shadow-light: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔄 Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+/* 📌 Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--gradient-bg);
+    padding: 15px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-light);
+    border-bottom: 3px solid var(--hover-color);
+}
+
+.navbar h2 {
+    margin-left: 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 🍔 Sidebar Toggle Button (Hamburger) */
+.menu-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+/* 📂 Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    box-shadow: var(--shadow-light);
+    transition: left 0.3s ease-in-out;
+    padding-top: 60px;
+}
+
+.sidebar.show {
+    left: 0; /* Show sidebar */
+}
+
+/* ❌ Sidebar Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+}
+
+/* 📑 Sidebar Links */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: var(--sidebar-text);
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: white;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* 📌 Main Content */
+.container {
+    max-width: 90%;
+    margin: 80px auto 20px auto;
+    padding: 20px;
+    background: var(--bg-color-2);
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    transition: margin-left 0.3s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
+    border: 2px solid var(--hover-color);
+}
+
+/* 🖥 Responsive Sidebar Behavior */
+#sidebar.show ~ .container {
+    margin-left: 260px;
+}
+
+/* 📋 Table Styling */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.user-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.user-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* 📲 Responsive Table (Stacked View on Small Screens) */
+@media (max-width: 480px) {
+    .user-table thead {
+        display: none;
+    }
+
+    .user-table, .user-table tbody, .user-table tr, .user-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .user-table tr {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        background: #fff3e0;
+        border: 1px solid #ffb74d;
+    }
+
+    .user-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .user-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #ff9800;
+    }
+}
+
+/* 🎭 Button Styling */
+.button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: var(--hover-color);
+}
+
+/* 🚪 Logout Modal */
+.logout-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.logout-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.logout-modal {
+    background: var(--bg-color-2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 🎬 Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 📱 Responsive Navbar & Sidebar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    #sidebar {
+        width: 100%;
+        left: -100%;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .menu-btn {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 28px;
+    }
+}
+
+/* 🌙 Dark Mode */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark-mode .navbar {
+    background: #333;
+    border-bottom: 3px solid #555;
+}
+
+body.dark-mode .container {
+    background: #2c2c2c;
+    border-color: #444;
+}
+
+body.dark-mode .user-table th {
+    background-color: #444;
+}
+
+body.dark-mode .user-table td {
+    background-color: #333;
+    color: #eee;
+}
+
+body.dark-mode .sidebar {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+}
+
+body.dark-mode .sidebar ul li a {
+    color: #f0f0f0;
+}
+
+body.dark-mode .sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .logout-modal {
+    background: #2c2c2c;
+    color: #f0f0f0;
+}

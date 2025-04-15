@@ -6,11 +6,6 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSI
     exit;
 }
 
-// Penghilang Cache
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-
 //REG ID
 session_regenerate_id(true);
 
@@ -70,7 +65,7 @@ $eskul_icons = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Guru - Eskul Management</title>
-    <link rel="stylesheet" href="asset1/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="navbar">
@@ -90,7 +85,6 @@ $eskul_icons = [
                 <ul>
                     <li><a href="#">Dashboard</a></li>
                     <li><a href="#">Kelola Eskul</a></li>
-                    <li><a href="#" onclick="confirmLogout(event)">Logout</a></li>
                 </ul>
             </nav>
         </div>
@@ -146,8 +140,8 @@ $eskul_icons = [
                         echo "<tr>";
                         echo "<td>🎓 " . htmlspecialchars($student['name']) . "</td>";
                         echo "<td>
-                                <a href='kelola_absensi.php?eskul_id=$eskul_id&student_id=" . $student['student_id'] . "' class='button'>Kelola Absensi</a>
-                                <a href='kelola_nilai.php?eskul_id=$eskul_id&student_id=" . $student['student_id'] . "' class='button'>Kelola Nilai</a>
+                                <a href='dashboard-guru-fiture/kelola_absensi.php?eskul_id=$eskul_id&student_id=" . $student['student_id'] . "' class='button'>Kelola Absensi</a>
+                                <a href='dashboard-guru-fiture/kelola_nilai.php?eskul_id=$eskul_id&student_id=" . $student['student_id'] . "' class='button'>Kelola Nilai</a>
                               </td>";
                         echo "</tr>";
                     }
@@ -173,17 +167,7 @@ $eskul_icons = [
             </div>
         </div>
     </div>
+    <script type="module" src="js/main.js"></script>
 
-    <script src="asset1/main.js"></script>
-    <script>
-        function confirmLogout(event) {
-            event.preventDefault();
-            document.getElementById("logoutOverlay").classList.add("show");
-        }
-        
-        function closeLogoutModal() {
-            document.getElementById("logoutOverlay").classList.remove("show");
-        }
-    </script>
 </body>
 </html>
