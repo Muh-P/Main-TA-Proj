@@ -1,3 +1,47 @@
+<?php
+session_start();
+
+// Prevent browser cache (so back button won’t load a cached page)
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+// Cek apakah user sudah login dan memiliki peran sebagai admin
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSION['role'] !== 'admin') {
+    header("Location: login.php");
+    exit;
+}
+
+// REG ID
+session_regenerate_id(true);
+
+// Database connection
+include 'koneksi.php';
+
+// Memastikan User Ada Di Session
+if (!isset($_SESSION['user_id'])) {
+    die("Error: Session user_id tidak ditemukan. Silakan login kembali.");
+}
+
+$user_id = $_SESSION['user_id'];
+
+// Ambil informasi admin berdasarkan user_id
+$query_admin = "SELECT id, full_name FROM users WHERE id = ? AND role = 'admin'";
+$stmt_admin = $conn->prepare($query_admin);
+$stmt_admin->bind_param("i", $user_id);
+$stmt_admin->execute();
+$result_admin = $stmt_admin->get_result();
+$admin = $result_admin->fetch_assoc();
+
+if (!$admin) {
+    die("Error: Tidak menemukan data admin untuk user_id " . $user_id);
+}
+
+$admin_id = $admin['id'];
+$admin_name = $admin['full_name'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
