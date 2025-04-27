@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "db_eskul_test";
+$database = "db_eskul_pasha";
 
 $conn = new mysqli($servername, $username, $password, $database);
 

@@ -68,6 +68,7 @@ $admin_name = $admin['full_name'];
             <ul>
                 <li><a href="#">Dashboard</a></li>
                 <li><a href="#">Manage Users</a></li>
+                <li><a href="profil.php">Profil</a></li>
                 <li><a href="#" onclick="confirmLogout(event)">Logout</a></li>
             </ul>
         </aside>

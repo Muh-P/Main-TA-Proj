@@ -328,3 +328,12 @@ body.dark-mode .logout-modal {
     background: #2c2c2c;
     color: #f0f0f0;
 }
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .container form img {
+    border-radius: 50%;
+    object-fit: cover;
+  }

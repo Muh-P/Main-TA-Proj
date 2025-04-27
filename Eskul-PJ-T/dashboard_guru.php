@@ -85,6 +85,8 @@ $eskul_icons = [
                 <ul>
                     <li><a href="#">Dashboard</a></li>
                     <li><a href="#">Kelola Eskul</a></li>
+                    <li><a href="profil.php">Profil</a></li>
+                    <li><a href="#" onclick="confirmLogout(event)">Logout</a></li>
                 </ul>
             </nav>
         </div>

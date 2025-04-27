@@ -26,7 +26,12 @@
                 </label>
             </div>
 
-            <button type="submit">Login</button>
+            <button type="submit" name="login">Login</button>
+        </form>
+
+        <!-- Registration button -->
+        <form action="php/register.php" method="POST" style="margin-top: 10px;">
+            <button type="submit">Registrasi</button>
         </form>
 
         <p class="decorative">Manage your extracurricular activities with ease!</p>
