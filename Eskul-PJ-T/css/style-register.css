@@ -1,0 +1,65 @@
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--bg-color-2);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    border: 2px solid var(--hover-color);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container input,
+.form-container select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-container button {
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+    background: var(--hover-color);
+}
+
+.form-container .error {
+    color: red;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.form-container .decorative {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.form-container .decorative a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.form-container .decorative a:hover {
+    text-decoration: underline;
+}

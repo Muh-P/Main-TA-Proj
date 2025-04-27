@@ -29,10 +29,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Hash password
             $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
+            // Default foto profil
+            $default_profile_picture = 'fotos/profile/default.png';
+
             // Masukkan user baru
-            $insert = "INSERT INTO users (full_name, username, password, role) VALUES (?, ?, ?, ?)";
+            $insert = "INSERT INTO users (full_name, username, password, role, profile_picture) VALUES (?, ?, ?, ?, ?)";
             $insert_stmt = $conn->prepare($insert);
-            $insert_stmt->bind_param("ssss", $full_name, $username, $hashed_password, $role);
+            $insert_stmt->bind_param("sssss", $full_name, $username, $hashed_password, $role, $default_profile_picture);
 
             if ($insert_stmt->execute()) {
                 // Registrasi sukses
@@ -53,10 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrasi - Eskul Management</title>
-    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-register.css">
 </head>
 <body>
-    <div class="login-container">
+    <div class="form-container">
         <h2>Registrasi Akun Baru</h2>
 
         <?php if (isset($error)): ?>
@@ -75,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <option value="teacher">Guru</option>
             </select>
 
-            <button type="submit">Register</button>
+            <button type="submit" class="button">Register</button>
         </form>
 
         <p class="decorative">Sudah punya akun? <a href="../login.php">Login di sini</a>.</p>
