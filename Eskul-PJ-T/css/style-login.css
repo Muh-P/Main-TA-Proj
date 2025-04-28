@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('../fotos/School.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* 🟡 Login Box Styled to Match Dashboard Theme */
+.login-container {
+    width: 350px;
+    padding: 20px;
+    background: rgba(255, 245, 225, 0.95); /* similar to --bg-color-2 */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* similar to --shadow-light */
+    text-align: center;
+    border: 2px solid #FFB433; /* match --hover-color */
+}
+
+.login-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #FFB433; /* match --primary-color */
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #FFB433;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fffdf7;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FFB433;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-container button:hover {
+    background-color: #E09E2C; /* match --hover-color */
+    transform: scale(1.05);
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.decorative {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* 👁 Password Toggle */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input[type="password"] {
+    flex-grow: 1;
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+    color: #555;
+}
+
+.toggle-password input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-/* 🌟 Profile Page Style - Modern Update */
+/* 🌟 Profile Page Style - Premium */
 
 :root {
     --primary-color: #FFB433;
@@ -6,6 +6,7 @@
     --background-color: #fff5e1;
     --text-color: #333;
     --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -29,7 +30,7 @@ body {
     width: 400px;
     padding: 60px 30px 30px;
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px var(--shadow);
     position: relative;
     text-align: center;
 }
@@ -45,7 +46,7 @@ body {
     top: -60px;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px var(--shadow);
 }
 
 .profile-picture-container img {
@@ -70,10 +71,27 @@ form {
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 input[type="file"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 button {
@@ -87,7 +105,12 @@ button {
     transition: background 0.3s ease;
 }
 
-button:hover {
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover:enabled {
     background: var(--hover-color);
 }
 

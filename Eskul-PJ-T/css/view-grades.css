@@ -1,0 +1,51 @@
+/* ===============================
+   STYLE KHUSUS UNTUK VIEW GRADES
+   =============================== */
+
+   .table-responsive {
+    overflow-x: auto; /* Scroll kalau tabel terlalu lebar */
+    margin-top: 20px;
+}
+
+/* Table rapi */
+.view-grades-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Kolom proporsional */
+    word-wrap: break-word;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Header table */
+.view-grades-table th {
+    background-color: #FFA500; /* Orange */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Isi table */
+.view-grades-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Kolom komentar khusus */
+.view-grades-table td:last-child {
+    text-align: left;
+    white-space: pre-wrap; /* Biar wrap teks komentar */
+    word-break: break-word; /* Pecah kata kalau kepanjangan */
+}
+
+/* Responsive padding di HP */
+@media (max-width: 768px) {
+    .view-grades-table td, .view-grades-table th {
+        padding: 8px;
+        font-size: 12px;
+    }
+}

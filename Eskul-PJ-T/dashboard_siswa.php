@@ -4,7 +4,6 @@ session_start();
 // Database connection
 include 'koneksi.php'; 
 
-
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSION['role'] !== 'student') {
     header("Location: login.php");
     exit;
@@ -46,13 +45,33 @@ $eskul_result = $stmt->get_result();
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="navbar">
+<div class="navbar">
+    <div class="navbar-left">
         <h2>Dashboard Siswa</h2>
-        <div class="menu">
-            <span>Selamat datang, <?php echo htmlspecialchars($student_name); ?>!</span>
-            <a href="#" onclick="confirmLogout(event)">Logout</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleNavbar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="navbar-center">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="dashboard_siswa.php">Home</a></li>
+            <li><a href="profil.php">Profil</a></li>
+            <li><a href="logout.php" onclick="return confirm('Yakin ingin logout?')">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="navbar-right">
+        <div class="profile">
+            <img src="images/profile-placeholder.png" alt="Profile" class="profile-logo">
+            <span class="welcome-message">Welcome, <?php echo htmlspecialchars($student_name); ?>!</span>
         </div>
     </div>
+</div>
+
 
     <div class="container">
         <h3>Informasi Siswa</h3>
