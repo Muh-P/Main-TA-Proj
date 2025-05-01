@@ -98,7 +98,7 @@ $eskul_icons = [
     <button id="close-btn" class="close-btn">&times;</button>
     <ul>
       <li><a href="dashboard_guru.php">Dashboard</a></li>
-      <li><a href="#">Kelola Eskul</a></li>
+      <li><a href="dashboard-guru-fiture/kelola_eskul.php">Kelola Eskul</a></li>
       <li><a href="profil.php">Profil</a></li>
       <li><a href="#" onclick="confirmLogout(event)">Logout</a></li>
     </ul>
@@ -123,6 +123,9 @@ $eskul_icons = [
 
             echo "<div class='eskul-section' style='border-left: 5px solid $color; padding-left: 10px; margin-bottom: 20px;'>";
             echo "<h4>$icon " . htmlspecialchars($eskul_name) . "</h4>";
+            
+            // Add button to manage students
+            echo "<a href='dashboard-guru-fiture/kelola_siswa.php?eskul_id=$eskul_id' class='button'>Tambah/Kelola Siswa</a>";
 
             // Ambil daftar siswa
             $query_students = "SELECT s.student_id, s.name FROM eskul_students es
@@ -158,7 +161,9 @@ $eskul_icons = [
                     echo "<td>🎓 " . htmlspecialchars($student['name']) . "</td>";
                     echo "<td>
                             <a href='dashboard-guru-fiture/kelola_absensi.php?eskul_id=$eskul_id&student_id=" . $student['student_id'] . "' class='button'>Kelola Absensi</a>
-                            <a href='dashboard-guru-fiture/kelola_nilai.php?eskul_id=$eskul_id&student_id=" . $student['student_id'] . "' class='button'>Kelola Nilai</a>
+                            <a href='dashboard-guru-fiture/kelola_prestasi.php?eskul_id=$eskul_id&student_id=" . $student['student_id'] . "' class='button'>Kelola Prestasi</a>
+                            <a href='dashboard-guru-fiture/kelola_keaktifan.php?eskul_id=$eskul_id' class='button'>Kelola Keaktifan</a>
+                            <a href='dashboard-guru-fiture/kelola_siswa.php?eskul_id=$eskul_id' class='button'>Kelola Siswa</a>
                           </td>";
                     echo "</tr>";
                 }

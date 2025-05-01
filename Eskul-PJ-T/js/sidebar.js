@@ -1,29 +1,19 @@
 export function initSidebar() {
-    const sidebar = document.querySelector('#sidebar');
-    const toggleBtn = document.getElementById('menu-btn');
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const sidebar = document.getElementById('sidebar');
 
-    if (!sidebar || !toggleBtn) return;
+    if (menuBtn && sidebar) {
+        menuBtn.addEventListener('click', () => sidebar.classList.add('show'));
+    }
 
-    toggleBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        sidebar.classList.toggle('show');
-    });
-
-    sidebar.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
+    if (closeBtn && sidebar) {
+        closeBtn.addEventListener('click', () => sidebar.classList.remove('show'));
+    }
 
     document.addEventListener('click', (e) => {
-        if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+        if (sidebar && !sidebar.contains(e.target) && e.target !== menuBtn) {
             sidebar.classList.remove('show');
         }
     });
 }
-
-
-// Fungsi untuk toggle navbar saat di HP//
-function toggleNavbar() {
-    const navLinks = document.getElementById('navLinks');
-    navLinks.classList.toggle('active');
-}
-

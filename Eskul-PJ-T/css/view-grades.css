@@ -42,6 +42,26 @@
     word-break: break-word; /* Pecah kata kalau kepanjangan */
 }
 
+/* Khusus untuk kolom nilai */
+.view-grades-table td:nth-child(5),
+.view-grades-table td:nth-child(6) {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style untuk nilai yang belum ada */
+.view-grades-table td:empty::after {
+    content: 'Belum dinilai';
+    color: #999;
+    font-style: italic;
+}
+
+/* Style untuk rekomendasi */
+.view-grades-table td:nth-child(7) {
+    font-weight: 500;
+    color: #2196F3;
+}
+
 /* Responsive padding di HP */
 @media (max-width: 768px) {
     .view-grades-table td, .view-grades-table th {
